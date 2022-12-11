@@ -24,7 +24,7 @@ void main ()
 	
 	for (i=0;i<n;i++){
 	   if (*(ptr+i) > 0) kol++;}
-	   printf("\nV massive %d polozhutelnih chisel", kol);
+	   printf("\nV massive %d polozhitelnih chisel", kol);
 	for (i=0;i<n;i++){
 	   if(*(ptr+i)==0) k=i;
 	}
