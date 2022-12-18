@@ -18,15 +18,36 @@ int main() {
 	  }                          //вывод матрицы
 	    printf ("\n"); 
 	 }
+	 // нахождение произведения элементов в строках, которые не содержат отрицательных элементов
 	for (i = 0; i < n; i ++) {
-	    p=1;
+	 p=1;
+	  if (a[i][i] > 0 ) {
 		for (j = 0; j < n; j++)
-		if (a[i][i] > 0 )
-		
-		  
-		  printf (" The product of array elements in %d-row that do not contain negative elements: %.d\n", i + 1, p *= a[i][j]); 
-		  else if (a[i][i]<0) printf("Tere are negative elements in %d-row\n",i+1);
-}
-		
+		 p *= a[i][j];
+		 printf (" The product of array elements in %d-row that do not contain negative elements: %.d\n", i + 1, p); 
+	  }
+    }
+	//нахождение максимума среди сумм элементов диагоналей, параллельных главной диагонали матрицы	
+	int maxsum = 0, sum= 0, k;
+	  for(k = 0; k < ; k++)
+    {
+        i = k < SZ - 1 ? 0 : index_i++;
+        j = k < SZ - 1 ? index_j-- : 0;
+        if(k >= SZ - 1)     size--;
+        while(j < size)
+            sum[k] += matr[i++][j++];
+        if(sum[k] > max_sum)
+            max_sum = sum[k];
+    }
+         printf (" The max sum of diagonal elements which are parallel to main diagonal: %.d\n", maxsum);
+    }
+ 
+	  	
+	 
+
+	
+	
+	
+	
 return 0;
 }
