@@ -2,6 +2,17 @@
 #include<conio.h>
 #include<string.h>
 #include<stdlib.h>
+// Ввести массив структур в соответствии с вариантом. Рассортировать массив в
+// алфавитном порядке по первому полю, входящему в структуру. В программе реализовать меню:
+// 1) Ввод массива структур;
+// 2) Сортировка массива структур;
+// 3) Поиск в массиве структур по заданному параметру;
+// 4) Изменение заданной структуры;
+// 5) Удаление структуры из массива;
+// 6) Вывод на экран массива структур;
+// 7) Выход.
+// 9. Структура «Вокзал»: номер поезда, пункт назначения, дни следования, время прибытия,
+// время стоянки.
 
 struct station //структура для вокзала
 {
@@ -60,13 +71,13 @@ void addTrain (void) //ввод массива структур
     }
 }
 
-void searchLastName(void)  //Поиск в массиве структур по заданному параметру
+void searchTrain(void)  //Поиск в массиве структур по заданному параметру
 {
 	system("cls");  
 	fflush(stdin);
-	char trainNumber[20];
+	int trainNumber;
 	printf("Enter train number: ");
-	fgets(trainNumber, 20, stdin);
+	scanf("%d", &trainNumber);
 	for(int i = 0; i < 5; i++)
 	{
 		if(strcmp(trains[i].trainNumber, trainNumber) == 0)
@@ -101,7 +112,7 @@ void editTrain(void)  //Изменение заданной структуры
 	getchar();
 	
 	printf("Enter train number: ", stdout);
-	scanf("d", &trains->trainNumber);
+	scanf("%d", &trains->trainNumber);
 
 	fputs("Enter destination: ", stdout);
 	fgets(trains->destination, 20, stdin);
@@ -168,7 +179,7 @@ void showAllTrains(void)  //Вывод на экран массива струк
 	for(int i = 0; i < n; i++)
 	{
 		printf("Train %d\n", i + 1);
-		printf("Enter train number: %d", trains[i].trainNumber);
+		printf("Enter train number: %d\n", trains[i].trainNumber);
 		printf("Enter destination: %s", trains[i].destination);
 		printf("Enter timetable: %s", trains[i].timetable);
 		printf("Enter arrival time: %d", trains[i].arrivalTime);
@@ -189,9 +200,9 @@ void menu(void){
 		while(1){
 		system("cls");
 		fflush(stdin);
-		char trainNumber[20];
+		int trainNumber;
 		printf("1.Add train\n");
-		printf("2.Search destination\n");
+		printf("2.Search train\n");
 		printf("3.Edit train\n");
 		printf("4.Delete train\n");
 		printf("5.Show all trains\n");
@@ -206,7 +217,7 @@ void menu(void){
 				addTrain();
 				break;
 			case 2:
-				searchDestination();
+				searchTrain();
 				break;
 			case 3:
 				editTrain();
@@ -223,6 +234,7 @@ void menu(void){
 	}
 }
 
-int main(void){
+int main(void)
+{
 	menu();
 }

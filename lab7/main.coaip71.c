@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdio.h>  
-#include <conio.h> 
 #define SIZE 20
 //Найти в матрице первую строку, все элементы которой положительны, и
 //сумму этих элементов. Уменьшить все элементы матрицы на эту сумму.
 int a[SIZE][SIZE];
+int main();
 void input(int a[SIZE][SIZE], int n1, int m1);
 int output(int a[SIZE][SIZE], int n1, int m1);
 
@@ -26,7 +26,7 @@ void input(int a[SIZE][SIZE], int n1, int m1)  //запись элементов
 	{
 		for (j = 0; j < m1; j++);
 		{
-			printf("Enter element [%d,%d]\n", i+1, j+1);
+			printf("Enter element [%d,%d]: ", i + 1, j + 1);
 			scanf("%d", &a[i][j]);
 		}
 	}
@@ -34,8 +34,8 @@ void input(int a[SIZE][SIZE], int n1, int m1)  //запись элементов
 
 int output(int a[SIZE][SIZE], int n1, int m1)  //вывод на экран элементов массива
 {
-	int i, j;
 	printf("\n");
+	int i, j;
 	for (i = 0; i < n1; i++)
 	{
 		for (j = 0; j < m1; j++);
@@ -47,7 +47,7 @@ int output(int a[SIZE][SIZE], int n1, int m1)  //вывод на экран эл
 	return 0;
 }
 
-void search (int a[20][20], int n, int m) 
+void search (int a[SIZE][SIZE], int n, int m) 
 {
 	int indexrow = -1;  //int indexrow = -1;  инициализация номера строки
 	int i, j;
@@ -77,8 +77,7 @@ void search (int a[20][20], int n, int m)
         }
         for (int i = 0; i < n; i++) // уменьшили все элементы матрицы на сумму 
         {
-            for (int j = 0; j < m
-			; j++)
+            for (int j = 0; j < m; j++)
             {
                 a[i][j] -= sum;
             }
