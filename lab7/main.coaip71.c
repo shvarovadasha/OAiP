@@ -19,6 +19,21 @@ void main(void)
 	
 	printf("\n");
 	
+	for (int i = 0; i < n; ++i)
+	{
+		if (search(a[i], n))
+		{
+		sum
+		break;
+	    }
+    }
+    
+    for (int i = 0; i < n; i++)
+	{
+    	for (int j = 0; j < n; j++)
+    	   printf("%d", a[i][j]);
+    	   printf("\n");
+	}
 }
 
 void input(int a[SIZE][SIZE], int n1, int m1)  //запись элементов массива
