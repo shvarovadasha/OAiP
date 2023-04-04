@@ -4,19 +4,21 @@
 //Найти в матрице первую строку, все элементы которой положительны, и
 //сумму этих элементов. Уменьшить все элементы матрицы на эту сумму.
 int a[SIZE][SIZE];
-int main();
-void input(int a[SIZE][SIZE], int n1, int m1);
-int output(int a[SIZE][SIZE], int n1, int m1);
 
-int main()
+void main(void)
 {
+	int a[SIZE][SIZE];
 	int n, m;
 	printf("Enter n\n");
 	scanf("%d", &n);
 	printf("Enter m\n");
 	scanf("%d", &m);
+	
 	input(a, n, m);
 	output(a, n,m);
+	
+	printf("\n");
+	
 }
 
 void input(int a[SIZE][SIZE], int n1, int m1)  //запись элементов массива
@@ -24,7 +26,7 @@ void input(int a[SIZE][SIZE], int n1, int m1)  //запись элементов
 	int i, j;
 	for (i = 0; i < n1; i++)
 	{
-		for (j = 0; j < m1; j++);
+		for (j = 0; j < m1; j++)
 		{
 			printf("Enter element [%d,%d]: ", i + 1, j + 1);
 			scanf("%d", &a[i][j]);
@@ -32,13 +34,13 @@ void input(int a[SIZE][SIZE], int n1, int m1)  //запись элементов
 	}
 }
 
-int output(int a[SIZE][SIZE], int n1, int m1)  //вывод на экран элементов массива
+int output(int a[SIZE][SIZE], int n, int m)  //вывод на экран элементов массива
 {
 	printf("\n");
 	int i, j;
-	for (i = 0; i < n1; i++)
+	for (i = 0; i < n; i++)
 	{
-		for (j = 0; j < m1; j++);
+		for (j = 0; j < m; j++)
 		{
 			printf("%d ", a[i][j]);
 		}
@@ -47,45 +49,35 @@ int output(int a[SIZE][SIZE], int n1, int m1)  //вывод на экран эл
 	return 0;
 }
 
-void search (int a[SIZE][SIZE], int n, int m) 
+int search(int a[SIZE][SIZE], int n, int m) 
 {
-	int indexrow = -1;  //int indexrow = -1;  инициализация номера строки
-	int i, j;
-	int flag[i];
+	int i = 0;
+	int j = 0;
+	int k = 0;
+	int index = 0;
 	for (i = 0; i < n; i++)
 	{
 		for (j = 0; j < m; j++)
 		{
-			if (a[i][j] <= 0)
+			if (a[i][j] > 0)
+			k ++;
+			else
 			{
+				k = 0;
 				break;
 			}
-			if (j == n - 1) //проверка дошел ли цикл до конца (если все элементы положительные, то...)
-			{
-				flag [i] = 1;
-				indexrow = i;
-			}
 		}
+		if (k == n)
+		{
+			index = i + 1;
+			break;
+		}
+	printf("\n");
 	}
-
-    if (flag[i] = 1)
-   {
-        float sum = 0;
-        for (int j = 0; j < m; j++) //сумма элементов нужной строки
-        {
-            sum += a[indexrow][j];
-        }
-        for (int i = 0; i < n; i++) // уменьшили все элементы матрицы на сумму 
-        {
-            for (int j = 0; j < m; j++)
-            {
-                a[i][j] -= sum;
-            }
-        }
-    }
-	else if (flag[i] = 0)
-	{
-		printf ("There is no relevant row");
-	}
-	getch ();
+	return 0;
 }
+
+
+
+
+
