@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<conio.h>
 #include<string.h>
 #include<stdlib.h>
 // Ввести массив структур в соответствии с вариантом. Рассортировать массив в
@@ -80,7 +79,7 @@ void searchTrain(void)  //Поиск в массиве структур по з�
 	scanf("%d", &trainNumber);
 	for(int i = 0; i < 5; i++)
 	{
-		if(strcmp(trains[i].trainNumber, trainNumber) == 0)
+		if(strcmp(trains == trainNumber) )
 		{
 			printf("Available information: \n");
 			printf("Train number: %d", trains[i].trainNumber);
